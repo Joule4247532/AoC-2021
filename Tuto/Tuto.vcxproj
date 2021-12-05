@@ -142,6 +142,7 @@
     <ClCompile Include="BinairyDiagnostic.cpp" />
     <ClCompile Include="Dive.cpp" />
     <ClCompile Include="GiantSquid.cpp" />
+    <ClCompile Include="HydrothermalVenture.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SonarSweep.cpp" />
     <ClCompile Include="SonarSweep_v2.cpp" />
@@ -150,6 +151,7 @@
     <ClInclude Include="BinairyDiagnostic.h" />
     <ClInclude Include="Dive.h" />
     <ClInclude Include="GiantSquid.h" />
+    <ClInclude Include="HydrothermalVenture.h" />
     <ClInclude Include="SonarSweep.h" />
     <ClInclude Include="SonarSweep_v2.h" />
   </ItemGroup>
@@ -157,6 +159,7 @@
     <Text Include="BinaryDiagnostic.txt" />
     <Text Include="DiveInputs.txt" />
     <Text Include="GiantSquidInputs.txt" />
+    <Text Include="HydrothermalVentureInputs.txt" />
     <Text Include="SonarSweepInputs.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
