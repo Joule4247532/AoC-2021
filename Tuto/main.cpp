@@ -5,6 +5,7 @@
 #include "BinairyDiagnostic.h"
 #include "GiantSquid.h"
 #include "HydrothermalVenture.h"
+#include "Lanternfish.h"
 
 int prompt() {
 	std::cout << std::endl;
@@ -14,6 +15,7 @@ int prompt() {
 	std::cout << "[3] Binairy Diagnostic" << std::endl;
 	std::cout << "[4] Giant Squid" << std::endl;
 	std::cout << "[5] Hydrothermal Venture" << std::endl;
+	std::cout << "[6] Lanternfish" << std::endl;
 	std::cout << "================================================================" << std::endl;
 	std::cout << "Type in the number of the challenge (q to quit): ";
 	char option[5];
@@ -49,6 +51,9 @@ int main() {
 			break;
 		case 5:
 			hydrothermalVenture();
+			break;
+		case 6:
+			lanternfish();
 			break;
 		default:
 			break;

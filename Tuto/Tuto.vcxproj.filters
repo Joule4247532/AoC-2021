@@ -36,6 +36,9 @@
     <ClCompile Include="HydrothermalVenture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Lanternfish.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SonarSweep.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HydrothermalVenture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Lanternfish.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
