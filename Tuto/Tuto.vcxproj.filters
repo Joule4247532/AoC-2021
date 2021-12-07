@@ -39,6 +39,9 @@
     <ClCompile Include="Lanternfish.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TheTreacheryOfWhales.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SonarSweep.h">
@@ -60,6 +63,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Lanternfish.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TheTreacheryOfWhales.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

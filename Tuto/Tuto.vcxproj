@@ -147,11 +147,13 @@
     <ClCompile Include="SonarSweep.cpp" />
     <ClCompile Include="SonarSweep_v2.cpp" />
     <ClCompile Include="Lanternfish.cpp" />
+    <ClCompile Include="TheTreacheryOfWhales.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinairyDiagnostic.h" />
     <ClInclude Include="Dive.h" />
     <ClInclude Include="GiantSquid.h" />
+    <ClInclude Include="TheTreacheryOfWhales.h" />
     <ClInclude Include="Lanternfish.h" />
     <ClInclude Include="HydrothermalVenture.h" />
     <ClInclude Include="SonarSweep.h" />
