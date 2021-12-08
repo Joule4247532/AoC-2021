@@ -147,12 +147,14 @@
     <ClCompile Include="SonarSweep.cpp" />
     <ClCompile Include="SonarSweep_v2.cpp" />
     <ClCompile Include="Lanternfish.cpp" />
+    <ClCompile Include="SevenSegmentSearchInputs.cpp" />
     <ClCompile Include="TheTreacheryOfWhales.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinairyDiagnostic.h" />
     <ClInclude Include="Dive.h" />
     <ClInclude Include="GiantSquid.h" />
+    <ClInclude Include="SevenSegmentSearchInputs.h" />
     <ClInclude Include="TheTreacheryOfWhales.h" />
     <ClInclude Include="Lanternfish.h" />
     <ClInclude Include="HydrothermalVenture.h" />
@@ -164,6 +166,7 @@
     <Text Include="DiveInputs.txt" />
     <Text Include="GiantSquidInputs.txt" />
     <Text Include="HydrothermalVentureInputs.txt" />
+    <Text Include="SevenSegmentSearchInputs.txt" />
     <Text Include="SonarSweepInputs.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

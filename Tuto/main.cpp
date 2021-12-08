@@ -7,6 +7,7 @@
 #include "HydrothermalVenture.h"
 #include "Lanternfish.h"
 #include "TheTreacheryOfWhales.h"
+#include "SevenSegmentSearchInputs.h"
 
 int prompt() {
 	std::cout << std::endl;
@@ -18,6 +19,7 @@ int prompt() {
 	std::cout << "[5] Hydrothermal Venture" << std::endl;
 	std::cout << "[6] Lanternfish" << std::endl;
 	std::cout << "[7] The Treachery Of Whales" << std::endl;
+	std::cout << "[8] Seven Segment Search" << std::endl;
 	std::cout << "================================================================" << std::endl;
 	std::cout << "Type in the number of the challenge (q to quit): ";
 	char option[5];
@@ -59,6 +61,9 @@ int main() {
 			break;
 		case 7:
 			theTreacheryOfWhales();
+			break;
+		case 8:
+			sevenSegmentSearch();
 			break;
 		default:
 			break;

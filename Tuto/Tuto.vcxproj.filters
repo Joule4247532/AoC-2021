@@ -42,6 +42,9 @@
     <ClCompile Include="TheTreacheryOfWhales.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SevenSegmentSearchInputs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SonarSweep.h">
@@ -68,6 +71,9 @@
     <ClInclude Include="TheTreacheryOfWhales.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SevenSegmentSearchInputs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="SonarSweepInputs.txt">
@@ -83,6 +89,9 @@
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="HydrothermalVentureInputs.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="SevenSegmentSearchInputs.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
