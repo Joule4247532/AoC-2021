@@ -1,13 +1,18 @@
 #include <iostream>
 
-#include "SonarSweep_v2.h"
-#include "Dive.h"
-#include "BinairyDiagnostic.h"
-#include "GiantSquid.h"
-#include "HydrothermalVenture.h"
-#include "Lanternfish.h"
-#include "TheTreacheryOfWhales.h"
-#include "SevenSegmentSearchInputs.h"
+#include "SonarSweep_v2.hpp"
+#include "Dive.hpp"
+#include "BinairyDiagnostic.hpp"
+#include "GiantSquid.hpp"
+#include "HydrothermalVenture.hpp"
+#include "Lanternfish.hpp"
+#include "TheTreacheryOfWhales.hpp"
+#include "SevenSegmentSearchInputs.hpp"
+#include "SyntaxScoring.hpp"
+#include "SmokeBasin.hpp"
+#include "DumboOctopus.hpp"
+#include "TransparentOrigami.hpp"
+#include "PacketDecoder.hpp"
 
 int prompt() {
 	std::cout << std::endl;
@@ -20,6 +25,11 @@ int prompt() {
 	std::cout << "[6] Lanternfish" << std::endl;
 	std::cout << "[7] The Treachery Of Whales" << std::endl;
 	std::cout << "[8] Seven Segment Search" << std::endl;
+	std::cout << "[9] Smoke Basin" << std::endl;
+	std::cout << "[10] Syntax Scoring" << std::endl;
+	std::cout << "[11] Dumbo Octopus" << std::endl;
+	std::cout << "[13] Transparent Origami" << std::endl;
+	std::cout << "[16] Packet Decoder" << std::endl;
 	std::cout << "================================================================" << std::endl;
 	std::cout << "Type in the number of the challenge (q to quit): ";
 	char option[5];
@@ -64,6 +74,21 @@ int main() {
 			break;
 		case 8:
 			sevenSegmentSearch();
+			break;
+		case 9:
+			smokeBasin();
+			break;
+		case 10:
+			syntaxScoring();
+			break;
+		case 11:
+			dumboOctopus();
+			break;
+		case 13:
+			transparentOrigami();
+			break;
+		case 16:
+			packetDecoder();
 			break;
 		default:
 			break;

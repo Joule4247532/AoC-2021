@@ -45,33 +45,63 @@
     <ClCompile Include="SevenSegmentSearchInputs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SyntaxScoring.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SmokeBasin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DumboOctopus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TransparentOrigami.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PacketDecoder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SonarSweep.h">
+    <ClInclude Include="SonarSweep.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SonarSweep_v2.h">
+    <ClInclude Include="SonarSweep_v2.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Dive.h">
+    <ClInclude Include="Dive.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BinairyDiagnostic.h">
+    <ClInclude Include="BinairyDiagnostic.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GiantSquid.h">
+    <ClInclude Include="GiantSquid.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HydrothermalVenture.h">
+    <ClInclude Include="HydrothermalVenture.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Lanternfish.h">
+    <ClInclude Include="Lanternfish.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TheTreacheryOfWhales.h">
+    <ClInclude Include="TheTreacheryOfWhales.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SevenSegmentSearchInputs.h">
+    <ClInclude Include="SevenSegmentSearchInputs.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SyntaxScoring.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SmokeBasin.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DumboOctopus.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TransparentOrigami.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PacketDecoder.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -92,6 +122,21 @@
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="SevenSegmentSearchInputs.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="SyntaxScoring.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="SmokeBasinInputs.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="TransparentOrigamiInputs.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="PacketDecoderInputs.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="DumboOctopusInputs.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

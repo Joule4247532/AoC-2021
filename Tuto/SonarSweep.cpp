@@ -1,7 +1,5 @@
 #include <iostream>
 
-#include "SonarSweep.h"
-
 void sonarSweep() {
 	int count = 0;
 	int buffer1 = 0;

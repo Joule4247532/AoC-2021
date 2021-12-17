@@ -16,10 +16,84 @@
  666 
 */
 
-int decodeEasy(std::string& segBits) {
+int getId(std::string str) {
+	int sum = 0;
+	for (const char c : str) {
+		sum += std::pow(10, ((int)c - 97));
+	}
+	return sum;
+}
+
+int findByValue(std::map<int, std::string> mapOfElemen, int value)
+{
+	auto it = mapOfElemen.begin();
+	// Iterate through the map
+	while (it != mapOfElemen.end())
+	{
+		// Check if value of this entry matches with given value
+		if (getId(it->second) == value)
+		{
+			// Yes found
+			return it->first;
+		}
+		// Go to next entry in map
+		it++;
+	}
+}
+
+bool fitsIn(std::string& segBits, std::string& solvedSegBits) {
+	bool fits = true;
+	for (const char c : solvedSegBits) {
+		if (segBits.find(c) == std::string::npos) {
+			fits = false;
+			break;
+		}
+	}
+	return fits;
+}
+
+int decodeEasyStep3(std::string& segBits, std::map<int, std::string>& solvedSeg) {
+	if (segBits == "") {
+		return -2;
+	}
+	if (fitsIn(solvedSeg[9], segBits)) {
+		return 5;
+	}
+	else {
+		return 2;
+	}
+}
+
+int decodeEasyStep2(std::string& segBits, std::map<int, std::string>& solvedSeg) {
+	int val = segBits.size();
+	if (val == 0) {
+		return -2;
+	}
+	if (val == 5) {
+		if (fitsIn(segBits, solvedSeg[7])) {
+			return 3;
+		}
+		return -1;
+	}
+	else if (val == 6) {
+		if (fitsIn(segBits, solvedSeg[4])) {
+			return 9;
+		}
+		else if (fitsIn(segBits, solvedSeg[7])) {
+			return 0;
+		}
+		return 6;
+	}
+	std::cout << "Error on decodeEasyStep2! Value: " << val << std::endl;
+	return -10;
+}
+
+int decodeEasyStep1(std::string& segBits) {
 	int val = segBits.size();
 	switch (val)
 	{
+	case 0:
+		return -2;
 	case 2:
 		return 1;
 	case 3:
@@ -27,9 +101,8 @@ int decodeEasy(std::string& segBits) {
 	case 4:
 		return 4;
 	case 5:
-		return -5;
 	case 6:
-		return -6;
+		return -1;
 	case 7:
 		return 8;
 	default:
@@ -39,80 +112,82 @@ int decodeEasy(std::string& segBits) {
 	return -10;
 }
 
-int decodeHard(std::vector<std::pair<std::string, int>>& encodedValues) {
-	std::vector<std::string> possibleValuesPerSegment;
-	std::map<int, std::string> formattedValues;
-	std::vector<std::string> solverPairs;
-	for (int i = 0; i < 7; i++) {
-		possibleValuesPerSegment.push_back(std::string());
+std::map<int, std::string> decode(std::vector<std::string>& segs) {
+	std::map<int, std::string> solved;
+	int index = 0;
+	for (std::string seg : segs)
+	{
+		int val = decodeEasyStep1(seg);
+		if (val >= 0) {
+			solved.emplace(val, seg);
+			segs[index] = "";
+		}
+		index++;
 	}
-	for (std::pair<std::string, int> pSegBits : encodedValues) {
-		if (std::get<1>(pSegBits) < 0)
-			solverPairs.push_back(std::get<0>(pSegBits));
-		if (std::get<1>(pSegBits) < 0)
-			continue;
-		formattedValues.emplace(std::get<1>(pSegBits), std::get<0>(pSegBits));
+	index = 0;
+	for (std::string seg : segs)
+	{
+		int val = decodeEasyStep2(seg, solved);
+		if (val >= 0) {
+			solved.emplace(val, seg);
+			segs[index] = "";
+		}
+		index++;
 	}
-	possibleValuesPerSegment[0] = formattedValues[7];
-	possibleValuesPerSegment[0].erase(std::remove(possibleValuesPerSegment[0].begin(), possibleValuesPerSegment[0].end(), formattedValues[1][0]), possibleValuesPerSegment[0].end());
-	possibleValuesPerSegment[0].erase(std::remove(possibleValuesPerSegment[0].begin(), possibleValuesPerSegment[0].end(), formattedValues[1][1]), possibleValuesPerSegment[0].end());
-	possibleValuesPerSegment[1] = formattedValues[4];
-	possibleValuesPerSegment[1].erase(std::remove(possibleValuesPerSegment[1].begin(), possibleValuesPerSegment[1].end(), formattedValues[1][0]), possibleValuesPerSegment[1].end());
-	possibleValuesPerSegment[1].erase(std::remove(possibleValuesPerSegment[1].begin(), possibleValuesPerSegment[1].end(), formattedValues[1][1]), possibleValuesPerSegment[1].end());
-	possibleValuesPerSegment[2] = formattedValues[1];
-	possibleValuesPerSegment[3] = possibleValuesPerSegment[1];
-	possibleValuesPerSegment[4] = formattedValues[8];
-	possibleValuesPerSegment[4].erase(std::remove(possibleValuesPerSegment[4].begin(), possibleValuesPerSegment[4].end(), possibleValuesPerSegment[0][0]), possibleValuesPerSegment[4].end());
-	possibleValuesPerSegment[4].erase(std::remove(possibleValuesPerSegment[4].begin(), possibleValuesPerSegment[4].end(), possibleValuesPerSegment[1][0]), possibleValuesPerSegment[4].end());
-	possibleValuesPerSegment[4].erase(std::remove(possibleValuesPerSegment[4].begin(), possibleValuesPerSegment[4].end(), possibleValuesPerSegment[1][1]), possibleValuesPerSegment[4].end());
-	possibleValuesPerSegment[4].erase(std::remove(possibleValuesPerSegment[4].begin(), possibleValuesPerSegment[4].end(), formattedValues[1][0]), possibleValuesPerSegment[4].end());
-	possibleValuesPerSegment[4].erase(std::remove(possibleValuesPerSegment[4].begin(), possibleValuesPerSegment[4].end(), formattedValues[1][1]), possibleValuesPerSegment[4].end());
-	possibleValuesPerSegment[5] = formattedValues[1];
-	possibleValuesPerSegment[6] = possibleValuesPerSegment[4];
-	
-
+	index = 0;
+	for (std::string seg : segs)
+	{
+		int val = decodeEasyStep3(seg, solved);
+		if (val >= 0) {
+			solved.emplace(val, seg);
+			segs[index] = "";
+		}
+		index++;
+	}
+	return solved;
 }
 
 void sevenSegmentSearch() {
 	std::ifstream inputs("SevenSegmentSearchInputs.txt");
-	std::vector<std::vector<std::vector<std::pair<std::string, int>>>> bigData;
-	std::string displayBits;
-	int count = 0;
+	std::vector<std::string> segs;
+	std::map<int, std::string> solvedSegs;
+	int sum = 0;
+	bool done = false;
 
 	if (inputs.is_open())
 	{
-		int lineCount = 0;
-		int segCount = 0;
 		// Read input file to vector
-		while (inputs >> displayBits)
-		{
-			if (segCount < 10) {
-				if ((int)bigData.size() < lineCount + 1) {
-					bigData.push_back(std::vector<std::vector<std::pair<std::string, int>>>());
-					bigData[lineCount].push_back(std::vector<std::pair<std::string, int>>());
-					bigData[lineCount].push_back(std::vector<std::pair<std::string, int>>());
-				}
-				bigData[lineCount][0].push_back(std::make_pair(displayBits, decodeEasy(displayBits)));
+		do {
+			segs.clear();
+			solvedSegs.clear();
+			std::string temp;
+			std::string num;
+			for (int i = 0; i < 10; i++) {
+				temp.clear();
+				std::getline(inputs, temp, ' ');
+				segs.push_back(temp);
 			}
-			else if (segCount > 10) {
-				bigData[lineCount][1].push_back(std::make_pair(displayBits, decodeEasy(displayBits)));
+			temp.clear();
+			std::getline(inputs, temp, ' ');
+			solvedSegs = decode(segs);
+			segs.clear();
+			for (int i = 0; i < 3; i++) {
+				temp.clear();
+				std::getline(inputs, temp, ' ');
+				segs.push_back(temp);
 			}
-			if (segCount < 11) {
+			temp.clear();
+			std::getline(inputs, temp);
+			segs.push_back(temp);
+
+			for (std::string seg : segs) {
+				int tempNum;
+				tempNum = findByValue(solvedSegs, getId(seg));
+				num += ((char)tempNum + 48);
 			}
-			else if (displayBits.size() == 2 || displayBits.size() == 3 ||
-				displayBits.size() == 4 || displayBits.size() == 7)
-			{
-				count++;
-			}
-			segCount++;
-			if (segCount == 15)
-			{
-				// Decode Hard Here !!!!!!!!!!!!
-				int temp = decodeHard(bigData[lineCount][0]);
-				lineCount++;
-				segCount = 0;
-			}
-		}
+			sum += std::stoi(num, nullptr, 10);
+
+		} while (inputs.peek() != EOF);
 		// Close back the file
 		inputs.close();
 	}
@@ -120,5 +195,5 @@ void sevenSegmentSearch() {
 		std::cout << "Unable to open file" << std::endl;
 		return;
 	}
-	std::cout << count << std::endl;
+	std::cout << sum << std::endl;
 }

@@ -144,30 +144,45 @@
     <ClCompile Include="GiantSquid.cpp" />
     <ClCompile Include="HydrothermalVenture.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PacketDecoder.cpp" />
+    <ClCompile Include="SmokeBasin.cpp" />
     <ClCompile Include="SonarSweep.cpp" />
     <ClCompile Include="SonarSweep_v2.cpp" />
     <ClCompile Include="Lanternfish.cpp" />
     <ClCompile Include="SevenSegmentSearchInputs.cpp" />
+    <ClCompile Include="DumboOctopus.cpp" />
+    <ClCompile Include="TransparentOrigami.cpp" />
+    <ClCompile Include="SyntaxScoring.cpp" />
     <ClCompile Include="TheTreacheryOfWhales.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BinairyDiagnostic.h" />
-    <ClInclude Include="Dive.h" />
-    <ClInclude Include="GiantSquid.h" />
-    <ClInclude Include="SevenSegmentSearchInputs.h" />
-    <ClInclude Include="TheTreacheryOfWhales.h" />
-    <ClInclude Include="Lanternfish.h" />
-    <ClInclude Include="HydrothermalVenture.h" />
-    <ClInclude Include="SonarSweep.h" />
-    <ClInclude Include="SonarSweep_v2.h" />
+    <ClInclude Include="BinairyDiagnostic.hpp" />
+    <ClInclude Include="Dive.hpp" />
+    <ClInclude Include="GiantSquid.hpp" />
+    <ClInclude Include="DumboOctopus.hpp" />
+    <ClInclude Include="PacketDecoder.hpp" />
+    <ClInclude Include="TransparentOrigami.hpp" />
+    <ClInclude Include="SmokeBasin.hpp" />
+    <ClInclude Include="SyntaxScoring.hpp" />
+    <ClInclude Include="SevenSegmentSearchInputs.hpp" />
+    <ClInclude Include="TheTreacheryOfWhales.hpp" />
+    <ClInclude Include="Lanternfish.hpp" />
+    <ClInclude Include="HydrothermalVenture.hpp" />
+    <ClInclude Include="SonarSweep.hpp" />
+    <ClInclude Include="SonarSweep_v2.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="BinaryDiagnostic.txt" />
     <Text Include="DiveInputs.txt" />
+    <Text Include="DumboOctopusInputs.txt" />
     <Text Include="GiantSquidInputs.txt" />
     <Text Include="HydrothermalVentureInputs.txt" />
+    <Text Include="PacketDecoderInputs.txt" />
     <Text Include="SevenSegmentSearchInputs.txt" />
+    <Text Include="SmokeBasinInputs.txt" />
     <Text Include="SonarSweepInputs.txt" />
+    <Text Include="SyntaxScoring.txt" />
+    <Text Include="TransparentOrigamiInputs.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
